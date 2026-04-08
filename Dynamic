@@ -1,0 +1,28 @@
+# Hàm đổi tiền thành các mệnh giá khác theo phương pháp quy hoạch động
+def coin_change_dp(coins, amount):
+    """
+    coins: danh sách mệnh giá tiền (1k, 2k, 5k, ...)
+    amount: số tiền cần đổi
+    """
+    INF = float('inf') # "Giá trị vô cực" để biểu thị không thể đổi được
+    dp = [INF] * (amount + 1) # dp[i] sẽ lưu số lượng đồng tiền tối thiểu để đổi được số tiền i
+    trace = [-1] * (amount + 1) # trace[i] sẽ lưu mệnh giá đồng tiền cuối cùng được sử dụng để đổi được số tiền i
+    dp[0] = 0 # Cần 0 đồng tiền để đổi được số tiền 0
+    for i in range (1, amount + 1): # Duyệt qua tất cả số tiền từ 1 đến amount
+        for coin in coins:
+            # Nếu mệnh giá đồng tiền hiện tại lớn hơn hoặc bằng số tiền i 
+            # và nếu sử dụng đồng tiền này sẽ giảm số lượng đồng tiền cần thiết để đổi được số tiền i
+            if i >= coin and dp[i - coin] + 1 < dp[i]: 
+                dp[i] = dp[i - coin] + 1 # Cập nhật số lượng đồng tiền tối thiểu để đổi được số tiền i
+                trace[i] = coin # Cập nhật mệnh giá đồng tiền cuối cùng được sử dụng để đổi được số tiền i
+
+    # Nếu dp[amount] vẫn là INF, nghĩa là không thể đổi được số tiền amount với các mệnh giá đã cho
+    if dp[amount] == INF:
+        return None, []
+    
+    result = []
+    cur = amount
+    while cur > 0: # Truy vết lại các mệnh giá đồng tiền đã sử dụng để đổi được số tiền amount
+        result.append(trace[cur])
+        cur -= trace[cur]
+    return dp[amount], result
