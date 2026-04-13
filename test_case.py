@@ -4,7 +4,7 @@ def get_test_cases():
         # 1. GREEDY TỐI ƯU (Hệ thống tiền chuẩn - Canonical)
         {
             "id": 1,
-            "name": "US Coin System",
+            "name": "Greedy tối ưu (đồng xu Mỹ)",
             "coins": [1, 5, 10, 25],
             "amount": 63,
             "purpose": "Greedy optimal (Standard system)",
@@ -14,7 +14,7 @@ def get_test_cases():
         # 2. GREEDY SAI (Bẫy tối ưu cục bộ - Non-canonical)
         {
             "id": 2,
-            "name": "Classic Greedy Fail",
+            "name": "Greedy sai (bẫy tối ưu cục bộ)",
             "coins": [1, 3, 4],
             "amount": 6,
             "purpose": "Greedy falls into local optimum",
@@ -24,7 +24,7 @@ def get_test_cases():
         # 3. GREEDY SAI RÕ RỆT (Sai số lớn)
         {
             "id": 3,
-            "name": "Significant Greedy Error",
+            "name": "Greedy sai rõ rệt (sai số lớn)",
             "coins": [1, 15, 25],
             "amount": 30,
             "purpose": "Demonstrate large discrepancy in coin count",
@@ -34,7 +34,7 @@ def get_test_cases():
         # 4. ỨNG DỤNG THỰC TẾ (Tiền Việt Nam)
         {
             "id": 4,
-            "name": "Vietnam Currency",
+            "name": "Ứng dụng thực tế tiền Việt Nam",
             "coins": [1000, 2000, 5000, 10000, 20000, 50000],
             "amount": 98000,
             "purpose": "Verify algorithms with real-world denominations",
@@ -44,7 +44,7 @@ def get_test_cases():
         # 5. TRƯỜNG HỢP NHỎ (Kiểm tra điều kiện biên)
         {
             "id": 5,
-            "name": "Small Case",
+            "name": "Trường hợp nhỏ kiểm tra điều kiện ",
             "coins": [1, 2, 5],
             "amount": 3,
             "purpose": "Simple input validation",
@@ -54,7 +54,7 @@ def get_test_cases():
         # 6. KHÔNG CÓ LỜI GIẢI (Edge Case)
         {
             "id": 6,
-            "name": "Impossible Case",
+            "name": "Trường hợp không có lời giải",
             "coins": [5, 7],
             "amount": 11,
             "purpose": "Test error handling (Target cannot be reached)",
@@ -64,7 +64,7 @@ def get_test_cases():
         # 7. TEST HIỆU NĂNG (Dữ liệu lớn)
         {
             "id": 7,
-            "name": "Performance Stress Test",
+            "name": "Test hiệu năng với dữ liệu lớn",
             "coins": [1, 2, 5, 10, 20],
             "amount": 100000, 
             "purpose": "Measure execution time difference (DP vs Greedy)",
@@ -72,9 +72,4 @@ def get_test_cases():
         }
     ]
 
-""" 
-Thằng Sơn nhớ gọi hàm của tao rồi duyệt nó:
-case 7 để test hiệu năng nha chó Sơn
-còn cái case 6 ở hàm main thuật toán trả về None 
-thì nhớ thông báo đéo có lời giải nghe chưa 
-"""
+
