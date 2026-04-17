@@ -8,8 +8,11 @@ def coin_change_dp(coins, amount):
     dp = [INF] * (amount + 1) # dp[i] sẽ lưu số lượng đồng tiền tối thiểu để đổi được số tiền i
     trace = [-1] * (amount + 1) # trace[i] sẽ lưu mệnh giá đồng tiền cuối cùng được sử dụng để đổi được số tiền i
     dp[0] = 0 # Cần 0 đồng tiền để đổi được số tiền 0
+    coins.sort()
     for i in range (1, amount + 1): # Duyệt qua tất cả số tiền từ 1 đến amount
         for coin in coins:
+            if coin > i:
+               break
             # Nếu mệnh giá đồng tiền hiện tại lớn hơn hoặc bằng số tiền i 
             # và nếu sử dụng đồng tiền này sẽ giảm số lượng đồng tiền cần thiết để đổi được số tiền i
             if i >= coin and dp[i - coin] + 1 < dp[i]: 
