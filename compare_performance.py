@@ -18,15 +18,6 @@ def compare_performance(case):
     # 3. Xử lý logic trạng thái
     str_g = str(count_g) if count_g is not None else "N/A"
     str_dp = str(count_dp) if count_dp is not None else "N/A"
-    
-    if count_g is None and count_dp is None:
-        status = "Không có lời giải"
-    elif count_g == count_dp:
-        status = "Tối ưu"
-    elif count_g is None and count_dp is not None:
-        status = "Greedy thất bại"
-    else:
-        status = f"Kém tối ưu (+{count_g - count_dp})"
         
     coins_str = ", ".join(map(str, case['coins']))
-    return f"{case['id']:<3} | {case['name']:<25} | {coins_str:<40} | {amount:<8} | {str_g:<12} | {str_dp:<12} | {time_dp:<12.4f} | {status}"
+    return f" {case['id']:<3} | {case['name']:<25} | {coins_str:<40} | {amount:<8} | {str_g:<12} | {str_dp:<12} | {time_g:<17.4f} | {time_dp:<15.4f} |"

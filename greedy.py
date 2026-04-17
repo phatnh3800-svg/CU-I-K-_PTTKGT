@@ -5,7 +5,7 @@ def coin_change_greedy(coins, amount):
     """
     # Tham lam cần duyệt từ mệnh giá lớn nhất đến nhỏ nhất
     sorted_coins = sorted(coins, reverse=True)
-    
+    coins = [c for c in coins if c > 0]
     result = []
     total_coins = 0
     remaining = amount

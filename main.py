@@ -4,7 +4,7 @@ def main():
     test_cases = get_test_cases()
     
     # In tiêu đề bảng
-    header = f"{'ID':<3} | {'Tên':<25} | {'Mệnh giá':<40} | {'Tiền':<8} | {'Greedy (Tờ)':<12} | {'DP (Tờ)':<12} | {'Time DP (ms)':<12} | {'Kết quả'}"
+    header = f" {'ID':<3} | {'Tên':<25} | {'Mệnh giá':<40} | {'Tiền':<8} | {'Greedy (Tờ)':<12} | {'DP (Tờ)':<12} | {'Time Greedy (ms)':<17} | {'Time DP (ms)':<15} | "
     print(header)
     print("-" * len(header))
     
